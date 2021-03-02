@@ -1,25 +1,27 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      string: 'Hello Murat'
+    }
+  }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         {this.state.string}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={()=> this.setState({string : 'Hey Murat, how are you?'})}> Change the Text</button>
       </header>
     </div>
   );
+}
 }
 
 export default App;
