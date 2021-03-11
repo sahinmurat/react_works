@@ -1,41 +1,64 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component{
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       monsters: [
         {
-          name:'Frankenstein',
+          name: 'Frankenstein',
           id: 'adse'
         },
         {
-          name:'Dracula',
+          name: 'Dracula',
           id: 'adsde'
         },
         {
-          name:'Zombie',
+          name: 'Zombie',
           id: 'ads2fe'
         },
 
       ]
     }
   }
-  componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res =>res.json(res))
-    .then(users => this.setState({monsters:users}))
+
+  render() {
+    return (
+      <div className="homepage">
+        <div className="menu" >
+          <div className="submenu" >
+            <h1> Hats</h1>
+            <span>Shop Now</span>
+          </div>
+        </div>
+        <div className="menu" >
+          <div className="submenu" >
+            <h1> Hats</h1>
+            <span>Shop Now</span>
+          </div>
+        </div>
+        <div className="menu" >
+          <div className="submenu" >
+            <h1> Hats</h1>
+            <span>Shop Now</span>
+          </div>
+        </div>
+        <div className="menu" >
+          <div className="submenu" >
+            <h1> Hats</h1>
+            <span>Shop Now</span>
+          </div>
+        </div>
+        <div className="menu" >
+          <div className="submenu" >
+            <h1> Hats</h1>
+            <span>Shop Now</span>
+          </div>
+        </div>
+      </div>
+    );
   }
-  render(){
-  return (
-    <div className="App">
-     {this.state.monsters.map(monster => (
-       <h1 key={monster.id}> {monster.name} </h1>
-     ) )}
-    </div>
-  );
-}
 }
 
 export default App;
